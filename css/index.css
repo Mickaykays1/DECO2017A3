@@ -1,6 +1,162 @@
-#top-nav {
-    background-color: aqua;
-    display:flex;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+li {
     text-decoration: none;
     list-style-type: none;
+}
+/* Navbar styling */
+body {
+    background-color: #f2762e;
+    padding: 1em;
+}
+#top-nav {
+    margin-bottom: 1em;
+}
+#top-nav > div {
+    display:inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#top-nav > h3 {
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-bottom: 0.3em;
+}
+
+#top-nav > div > li > a{
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 500;
+}
+
+/* Weekly Stats Styling */
+
+/* Progress Bars */
+
+.container {
+    background-color: white;
+    padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.container >header > h4 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight:500;
+    font-size: 1.3em;
+}
+
+.progress-bar {
+    background-color: #dedede;
+    margin: auto;
+    width: 200px;
+    height: 20px;
+    border-radius: 9px;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+#task-complete {
+    background-color: #f23030;
+    width: 50%;
+    height: 20px;
+    border-radius: 9px;
+}
+#study-time {
+    background-color: #f2d338;
+    width: 32%;
+    height: 20px;
+    border-radius: 9px;
+    justify-content: center;
+}
+#progress {
+    background-color: #25c7d9;
+    width: 90%;
+    height: 20px;
+    border-radius: 9px;
+    justify-content: center;
+}
+
+.stats-text {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/* To Do List */
+
+.day-container {
+    padding-bottom: 0.5em;
+}
+
+.day-container > p {
+    padding-bottom: 0.5em;
+}
+
+.to-do-container > li {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.to-do-container > li > div {
+    margin-left: 20px;
+}
+
+/* Start Workout Styling  */
+
+#title-start-workout > li > h2 {
+    text-transform: uppercase;
+    font-weight:500;
+    font-size: 1.9em;
+}
+
+article {
+    width: 80px;
+    text-align: center;
+    background-color: #f2762e;
+    border-radius: 10px;
+    /* margin: 50px auto 20px; */
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px #ccc;
+}
+
+article h3 {
+    padding: 0.2em;
+    color: #fff;
+}
+article .count {
+    padding: 5px;
+}
+article #timer{
+    padding: 5px;
+    color: black;
+    background-color: aliceblue;
+    border-radius: 2px;
+}
+
+
+#timing-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Smaller elements styling */
+.container2 {
+    background-color: #25c7d9;
+    padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+.container2 >header > h4 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight:500;
+    font-size: 1.3em;
 }
