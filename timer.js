@@ -1,39 +1,49 @@
-var sec         = 1800,
-    countDiv    = document.getElementById("timer"),
-    secpass,
-    countDown   = setInterval(function () {
-        'use strict';
-        
-        secpass();
-    }, 1000);
+const TIME_LIMIT = 5;
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
 
-function secpass() {
-    'use strict';
-    
-    var min     = Math.floor(sec / 60),
-        remSec  = sec % 60;
-    
-    if (remSec < 10) {
-        
-        remSec = '0' + remSec;
-    
+
+document.getElementById("clock").innerHTML = `
+    <div>
+        hello there
+        <div id="label">
+        </div>
+        <button onclick= "countdown()" type= "button" class="btn btn-light">Start</button>
+        <button onclick= "myStopFunction()" type= "button" class="btn btn-light">Pause</button>
+    </div>
+`
+
+function formatTime(time) {
+    let minutes = Math.floor(time/60)
+    let seconds = time%60
+    if (seconds < 10) {
+        seconds = `0${seconds}`
     }
-    if (min < 10) {
-        
-        min = '0' + min;
-    
+    if (minutes < 10) {
+        minutes = `0${minutes}`
     }
-    countDiv.innerHTML = min + ":" + remSec;
-    
-    if (sec > 0) {
-        
-        sec = sec - 1;
-        
-    } else {
-        
-        clearInterval(countDown);
-        
-        countDiv.innerHTML = 'countdown done';
-        
-    }
+    return `${minutes}: ${seconds}`
+}
+
+
+
+
+function countdown() {
+        timerInterval = setInterval(()=> {
+            timePassed += 1;
+            timeLeft= TIME_LIMIT - timePassed;
+            document.getElementById("label").innerHTML =
+                formatTime(timeLeft);
+            if (timeLeft == 0) {
+                myStopFunction()
+            }
+            
+        },1000);
+ 
+}
+
+function myStopFunction() {
+    clearInterval(timerInterval);
+       
 }
